@@ -14,6 +14,51 @@ def word_list(text):
     return filtered_list
 
 
+def unique_words(text):
+    # David Jimenez
+    """Crea un set que incluye únicamente una ocurrencia de cada palabra"""
+    pass
+
+
+def word_frequency(text):
+    # Sergio Torres
+    """Retorna un diccionario con las palabras y su frecuencia en el texto"""
+    pass
+
+def longer_word(text):
+    # Noemí
+    """Return the longer word in the text"""
+    pass
+
+def shorter_word(text):
+    # Noemí
+    """Return the shorter word in the text"""
+    pass
+
+def word_filter(words, filter_words):
+    # Ruben
+    """Return  the words list filtered by filter_words"""
+    pass
+
+def char_counter(text):
+    #Jahn
+    """Return the quantity of chars in the text excluding special 
+    charts like ',','.','(',')' and spaces"""
+    pass
+
+def filter_by_word_length(text,l):
+    #Juan Antonio
+    """Return the list of words with lenght over than l"""
+    pass
+
+def count_by_lenght(text, l):
+    # Dani Gonzalez
+    """Return a dict with lengths and quantities of words with this lenghts"""
+    pass
+
+
+
+
 if __name__ == "__main__":
     print("==Test Text Analizer==")
     print(word_list("Hola  que tal"))
@@ -24,5 +69,6 @@ if __name__ == "__main__":
     assert word_list("Hola que tal") == ['Hola','que','tal'], "word_list failed and not returned the required list of words..."
     assert word_list("Hola  que tal") == ['Hola','que','tal'], "word_list failed and not returned the required list of words..."
 
-
+    #Angel -> Escribir los asserts de validar todas las funciones anteriores
+    
     print("Todo OK")
