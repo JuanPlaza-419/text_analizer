@@ -111,6 +111,10 @@ def count_by_lenght(text, l=None):
             diccionario[longitud] = diccionario.get(longitud, 0) + 1
     return diccionario
 
+def count_by_word(text, l):
+    # Vito
+    """Recibe un texto y devuelve el número total de palabras que contiene dicho texto"""
+    return len(text.split())
 
 
 
