@@ -1,3 +1,5 @@
+import string
+
 print("Text Analizer")
 
 
@@ -43,8 +45,16 @@ print(resultado) # Imprime en pantalla el valor de resultado, es decir, el set c
 
 def word_frequency(text):
     # Sergio Torres
-    """Retorna un diccionario con las palabras y su frecuencia en el texto"""
-    pass
+    "Retorna un diccionario con las palabras y su frecuencia en el texto"
+    frequencies = {}
+    text = text.lower()
+    text = text.translate(str.maketrans('', '', string.punctuation))
+    words = text.split()
+    
+    for word in words:
+        frequencies[word] = frequencies.get(word, 0) + 1
+        
+    return frequencies
 
 def longer_word(text):
     # Noemí
@@ -75,7 +85,9 @@ print("La palabra más corta es:", shorter_word(texto))
 def word_filter(words, filter_words):
     # Ruben
     """Return  the words list filtered by filter_words"""
-    pass
+    filter_words_Lower=[str(filter_word).lower() for filter_word in filter_words]
+    words_filtered=[word_filtered for word_filtered in words if str(word_filtered).lower() not in filter_words_Lower]
+    return words_filtered
 
 def char_counter(text):
     #Jahn
@@ -88,10 +100,16 @@ def filter_by_word_length(text,l):
     """Return the list of words with lenght over than l"""
     pass
 
-def count_by_lenght(text, l):
+def count_by_lenght(text, l=None):
     # Dani Gonzalez
     """Return a dict with lengths and quantities of words with this lenghts"""
-    pass
+    palabras = text.split()
+    diccionario = {}
+    for p in palabras:
+        longitud = len(p)
+        if l is None or longitud == 1:
+            diccionario[longitud] = diccionario.get(longitud, 0) + 1
+    return diccionario
 
 
 
@@ -100,6 +118,8 @@ if __name__ == "__main__":
     print("==Test Text Analizer==")
     print(word_list("Hola  que tal"))
     # print(len(word_list("Hola que tal")))
+    count_by_length = count_by_lenght("Hola que tal",2)
+    print(f"Count by lenght: {count_by_lenght}")
 
     assert len(word_list("Hola que tal")) == 3, "word_list failed and not returned the required quantity of words..."
     assert len(word_list("Hola  que tal")) == 3, "word_list failed and not returned the required quantity of words..."
