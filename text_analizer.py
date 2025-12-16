@@ -1,4 +1,3 @@
-
 print("Text Analizer")
 
 
@@ -25,31 +24,31 @@ def word_frequency(text):
     """Retorna un diccionario con las palabras y su frecuencia en el texto"""
     pass
 
-def palabra_mas_larga(texto):
+def longer_word(text):
     # Noemí
-    palabras = texto.split()  
-    palabra_larga = palabras[0]  
+    palabras = text.split()  
+    longer_word = palabras[0]  
     for palabra in palabras:
-        if len(palabra) > len(palabra_larga):
-            palabra_larga = palabra
-    return palabra_larga
+        if len(palabra) > len(longer_word):
+            longer_word = palabra
+    return longer_word
 
 
 texto = "Me llamo Noemí y vivo en Huesca"
-print("La palabra más larga es:", palabra_mas_larga(texto))
+print("La palabra más larga es:", longer_word(texto))
 
-def palabra_mas_corta(texto):
+def shorter_word(text):
     #Noemí
-    palabras = texto.split()  
-    palabra_corta = palabras[0]  
+    palabras = text.split()  
+    shorter_word = palabras[0]  
     for palabra in palabras:
-        if len(palabra) < len(palabra_corta):
-            palabra_corta = palabra
-    return palabra_corta
+        if len(palabra) < len(shorter_word):
+            shorter_word = palabra
+    return shorter_word
 
 
 texto = "Me llamo Noemí y vivo en Huesca"
-print("La palabra más corta es:", palabra_mas_corta(texto))
+print("La palabra más corta es:", shorter_word(texto))
 
 def word_filter(words, filter_words):
     # Ruben
